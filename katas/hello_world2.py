@@ -3,7 +3,8 @@ def create_greeting():
     Returns a complete greeting message by concatenating strings.
     """
     greeting = "Hello"
-    name = 'world'
+    name = 'world!'
+    return greeting + ", " + name
 
 
 result = create_greeting()

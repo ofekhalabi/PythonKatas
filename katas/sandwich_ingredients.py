@@ -1,7 +1,8 @@
 def get_sandwich_ingredients(sandwich):
-    """
-    Returns the middle elements of the sandwich list
-    """
+    if len(sandwich) < 3:
+        return []
+    else:
+        return sandwich[1:len(sandwich)-1]
 
 
 sandwich_ingredients = ["bread", "lettuce", "tomato", "cheese", "bread"]

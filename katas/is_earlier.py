@@ -1,8 +1,5 @@
 def is_earlier(date1, date2):
-    """
-    Compares two ISO 8601 date strings and returns True if the first date is earlier than the second date.
-    """
-
+    return date1 < date2
 
 date1 = "2023-07-29"
 date2 = "2023-08-01"

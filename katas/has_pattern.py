@@ -1,7 +1,8 @@
 def has_pattern(text):
-    """
-    Checks if the text contains the specific pattern "abc" at the start.
-    """
+    if text.startswith("abc"):
+        return "True, \"abc\" is at the start"
+    else:
+        return "False, \"abc\" is not at the start"
 
 
 

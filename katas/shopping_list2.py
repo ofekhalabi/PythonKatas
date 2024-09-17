@@ -1,12 +1,12 @@
-def build_shopping_list(initial_items, new_item):
-    """
-    Addd new_item to the initial_items list.
-    """
+def build_shopping_list(initial_items,new_item):
+    initial_items.append(new_item)
+    return initial_items
+
 
 
 current_list = ["milk", "bread"]
 new_item = "eggs"
-print(build_shopping_list(current_list, new_item))  # ["milk", "bread", "eggs"] expected
+print(build_shopping_list(current_list,new_item))  # ["milk", "bread", "eggs"] expected
 
 current_list = ["apples", "oranges"]
 new_item = "bananas"

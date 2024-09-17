@@ -1,7 +1,5 @@
 def my_abs(value):
-    """
-    Returns the absolute value of the given number.
-    """
+    return abs(value)
 
 
 # Test cases

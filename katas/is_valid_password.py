@@ -1,7 +1,20 @@
 def is_valid_password(password):
-    """
-    Checks if the given password meets the required criteria.
-    """
+    # Check for minimum length
+    if len(password) < 8:
+        return False
+
+    # Check for at least one uppercase letter
+    if not any(c.isupper() for c in password):
+        return False
+
+    # Check for at least one lowercase letter
+    if not any(c.islower() for c in password):
+        return False
+
+    # If all checks pass
+    return True
+
+
 
 
 # Test cases

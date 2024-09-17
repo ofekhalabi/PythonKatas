@@ -5,7 +5,6 @@ _Kata_ is a Japanese word (型 or 形) meaning "form". It refers to a detailed c
 **Python Katas** are short, focused coding exercises designed for practice, aimed at improving specific programming skills, often involving solving problems or implementing algorithms.
 
 
-
 ## Katas
 
 > [!TIP]

@@ -1,8 +1,8 @@
 def is_subscriber_matching(subscriber_name, actual_name):
-    """
-    Checks if the subscriber's name matches the actual name without care about case-insensitivity.
-    Returns True if they match, otherwise False.
-    """
+    if subscriber_name.lower() == actual_name.lower():
+        return True
+    else:
+        return False
 
 
 result = is_subscriber_matching("John Doe", "john doe")

@@ -1,7 +1,10 @@
 def replace_email(email_list, old_email, new_email):
-    """
-    This function replaces an old email with a new email in the provided list of emails.
-    """
+    count=0
+    for i in range(len(email_list)):
+        if old_email == email_list[i]:
+            email_list[i]=new_email
+    return email_list
+
 
 
 email_list = ["email1@example.com", "email2@example.com", "email3@example.com"]

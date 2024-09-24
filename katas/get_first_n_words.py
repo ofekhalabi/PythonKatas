@@ -1,7 +1,6 @@
 def get_first_n_words(text, n=5):
-    """
-    Splits the text into words and returns the first 'n' words as a single string.
-    """
+    list_content = text_content.split(" ")
+    return ' '.join(list_content[:n])
 
 
 text_content = "The quick brown fox jumps over the lazy dog."

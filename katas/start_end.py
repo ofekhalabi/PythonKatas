@@ -1,10 +1,8 @@
 def start_end(text, n, m):
-    """
-    The function returns the first 'n' characters from the string text,
-    concatenated with the last 'm' characters from the string.
-
-    If 'n' or 'm' are invalid (negative or larger than text length), return an empty string.
-    """
+    if ( n or m ) < 0 or (n or m ) > len(text):
+        return ""
+    else:
+        return text[:n] + text[-m:]
 
 
 text = 'Elvis has left the building'
@@ -20,7 +18,7 @@ print(result)  # Expected output: 'Elvisding'
 result = start_end('Pythonista', 4, 3)
 print(result)  # Expected output: 'Pythsta'
 
-result = start_end(text, 25, 1)  # Invalid input (too large)
+result = start_end(text, 100, 1)  # Invalid input (too large)
 print(result)  # Expected output: ''
 
 """

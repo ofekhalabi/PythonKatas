@@ -3,6 +3,14 @@ def max_difference(numbers):
     This function takes a list of numbers and returns the maximum difference
     between any two elements in the list.
     """
+    min_num = numbers[0]
+    max_num = numbers[0]
+    for i in numbers:
+        if i < min_num :
+            min_num = i
+        if i > max_num :
+            max_num = i
+    return max_num - min_num
 
 
 number_list = [3, 10, 6, 2, 8]

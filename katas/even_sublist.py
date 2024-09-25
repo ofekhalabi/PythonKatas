@@ -1,10 +1,9 @@
 def even_sublist(numbers):
-    """
-    Returns a new list containing only the even numbers from the provided list.
-
-    :param numbers: list of integers
-    :return: list of even integers
-    """
+    even_num = []
+    for i in numbers:
+        if i % 2 == 0 :
+            even_num.append(i)
+    return even_num
 
 
 

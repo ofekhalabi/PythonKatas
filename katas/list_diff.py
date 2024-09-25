@@ -1,9 +1,10 @@
 def list_diff(numbers):
-    """
-    Returns a new list where each element is the difference
-    between the current element and its predecessor.
-    The first element is left unchanged.
-    """
+    new_list = [numbers[0]]
+    for i in range(1,len(numbers)):
+        new_list.append(numbers[i] - numbers[i-1])
+
+    return new_list
+
 
 
 numbers = [10, 20, 15, 25, 30]

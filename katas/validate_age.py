@@ -3,6 +3,9 @@ def validate_age(age):
     This function checks if the provided age is a valid integer
     between 0 and 120. If the input is invalid, it returns None.
     """
+    if type(age) == int :
+        if 120 > int(age) > 0:
+            return age
 
 
 print(validate_age(25))   # Expected output: 25

@@ -4,6 +4,9 @@ def find_contact(phonebook, name):
 
     Returns the phone number if found, otherwise 'Contact not found'.
     """
+    if name in phonebook:
+        return phonebook[name]
+    return "Contact not found"
 
 
 phonebook = {

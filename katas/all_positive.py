@@ -2,6 +2,10 @@ def all_elements_meet_condition(numbers):
     """
     Checks if all elements in the given list of numbers are positive.
     """
+    for i in numbers:
+        if i <= 0:
+            return False
+    return True
 
 
 print(all_elements_meet_condition([1, 2, 3, 4, 5]))   # Expected output: True

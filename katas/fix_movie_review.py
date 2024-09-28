@@ -1,11 +1,8 @@
 def get_movie_review(reviews, movie):
     """
-    Returns a review on a given movie. If a movie review is not present, return 'Unknown movie.'.
+    Returns a review on a given movie. If a movie review is not present, return 'Unknown movie
     """
-
-    # fixme
-    return reviews['movie']
-
+    return reviews.get(movie,"Unknown movie.")
 
 movie_reviews = {
     'Inception': 'Excellent movie with a mind-bending plot.',

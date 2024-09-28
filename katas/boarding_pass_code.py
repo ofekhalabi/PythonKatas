@@ -2,6 +2,7 @@ def generate_boarding_pass(passenger):
     """
     Generates a boarding pass code for the given passenger.
     """
+    return f"{passenger['flight_number']}//{passenger['name'].split()[1]}//{passenger['departing']}-{passenger['arrival']}//{passenger['boarding_time'].replace(':','')}//{passenger['seat'].upper()}"
 
 
 passenger_info = {

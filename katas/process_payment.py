@@ -4,6 +4,25 @@ def process_payment(payment):
 
     The `payment` argument can be either a single float, a string, or a list of floats.
     """
+    total_price = 0
+    if type(payment) == list :
+        for i in payment:
+            if isinstance(i,str):
+                if i.isdigit():
+                    total_price = float(i) + total_price
+                return None
+            total_price = float(i) + total_price
+        return f"${total_price:.2f}"
+
+    if isinstance(payment,str):
+        if payment.isdigit():
+            return f"${float(payment):.2f}"
+        return None
+    if isinstance(payment,float) or isinstance(payment,int):
+        return f"${float(payment):.2f}"
+
+    return None
+
 
 
 print(process_payment(123.456))  # Expected output: $123.46

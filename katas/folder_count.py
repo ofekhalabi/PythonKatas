@@ -1,10 +1,17 @@
+from os.path import split
+
+
 def count_folders(file_path):
     """
     Returns the number of folders in the given file path.
     `file_path` is a string representing the path to a file (either Windows or Linux format).
     """
-
-
+    if "\\" in file_path:
+        list_file = file_path.split("\\")
+        return len(list_file) -2
+    if "/" in file_path:
+        list_file = file_path.split("/")
+        return len(list_file) - 2
 # Example usage
 file_path_1 = "C:\\Users\\Alex\\Documents\\project\\file.txt"
 folders_count_1 = count_folders(file_path_1)

@@ -3,6 +3,12 @@ def lets_vote(votes, candidate):
     Updates the vote counts in the votes dictionary based on the candidate who received a single vote.
     """
 
+    if candidate in votes:
+        votes[candidate] = votes[candidate] + 1
+    else:
+       votes[candidate] = 1
+    return
+
 
 candidate_state = {'Alice': 0, 'Bob': 0}
 

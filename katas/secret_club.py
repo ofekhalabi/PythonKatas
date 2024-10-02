@@ -4,6 +4,15 @@ def secret_club(keys, values):
     - keys: A list of club member names.
     - values: A list of secret codes.
     """
+    dict_keys_value = dict(zip(keys,values))
+    return dict_keys_value
+"""    dict_keys_value = {}
+    for i in range(len(keys)):
+        dict_keys_value[keys[i]] = values[i]
+    return dict_keys_value
+    """
+
+
 
 
 # Example usage

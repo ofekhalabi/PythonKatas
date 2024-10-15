@@ -7,13 +7,15 @@ def square(x):
 
 
 def capitalize_full_name(firstname, lastname):
-    return firstname[0].upper() + firstname[1:] + lastname[0].upper() + lastname[1:]
+    return firstname[0].upper() + firstname[1:] +" "+ lastname[0].upper() + lastname[1:]
 
 
 def do_twice(func, *args):
     """
     Applies the given function to the provided arguments and returns the result.
     """
+    return func(*args),func(*args)
+
 
 
 # Example usage

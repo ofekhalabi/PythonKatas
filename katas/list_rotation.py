@@ -1,7 +1,18 @@
+
+
 def rotate_list(lst, n):
     """
     Rotates the list 'lst' by 'n' positions to the right.
     """
+    rotated_list = lst.copy()
+    if n > 0 :
+        for i in range(n):
+            rotated_list.insert(0,rotated_list.pop())
+    else:
+        for i in range(abs(n)):
+            rotated_list.insert(len(lst), rotated_list.pop(0))
+    return rotated_list
+
 
 
 

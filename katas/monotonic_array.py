@@ -2,6 +2,13 @@ def monotonic_array(lst):
     """
     This function returns True/False if the given list is monotonically increased or decreased
     """
+    inc = 0
+    dec = 0
+    for i in range(len(lst)-1):
+        if lst[i+1] < lst[i]:
+            inc += 1
+        elif lst[i+1] >= lst[i]:
+    return True
 
 
 

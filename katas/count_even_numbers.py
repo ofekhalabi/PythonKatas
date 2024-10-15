@@ -6,8 +6,7 @@ def count_even_numbers(numbers):
     for num in numbers:
         if num % 2 == 0:
             count += 1
-
-        return count
+    return count
 
 
 numbers_list = [1, 2, 3, 4, 5, 6]

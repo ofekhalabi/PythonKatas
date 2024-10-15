@@ -23,16 +23,21 @@ class CacheList(list):
     """
     def __init__(self, cache_capacity=5):
         super().__init__()
-        pass
+        self.cache_capacity = cache_capacity
+
 
     def append(self, element):
-        pass
+        if  (len(c_list)) == 3 :
+            super().pop(0)
+            super().append(element)
+        else:
+            super().append(element)
 
     def cache_capacity(self):
         """
         Return the cache capacity
         """
-        pass
+        return self.cache_capacity
 
 
 if __name__ == '__main__':

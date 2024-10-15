@@ -11,17 +11,25 @@ class Dog:
     4. Add the dog position to the description printed in describe method. E.g.: `I'm John, a Puddle. I'm standing.`
 
     """
-    def __init__(self, name, breed):
+    def __init__(self, name, breed, position="sitting"):
         self.name = name
         self.breed = breed
+        self.position = position
 
-    def bark(self):
-        print("Woof! Woof!")
+    def bark(self, n=2):
+        print("Woof! " * n )
 
     def describe(self):
-        print(f"I'm {self.name}, a {self.breed}.")
+        print(f"I'm {self.name}, a {self.breed}. I'm {self.position}")
 
+    def sit(self):
+        self.position = "sitting"
 
+    def stand(self):
+        self.position = "standing"
+
+    def jump(self):
+        self.position = "jumping"
 if __name__ == "__main__":
     my_dog = Dog("Buddy", "Golden Retriever")
 

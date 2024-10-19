@@ -20,7 +20,7 @@ class Dog:
         print("Woof! " * n )
 
     def describe(self):
-        print(f"I'm {self.name}, a {self.breed}. I'm {self.position}\n")
+        return f"I'm {self.name}, a {self.breed}. I'm {self.position}\n"
 
     def sit(self):
         self.position = "sitting"

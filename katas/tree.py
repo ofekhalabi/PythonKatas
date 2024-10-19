@@ -61,7 +61,7 @@ class Tree:
 
         for child in current_node.children:
             result = self.get_node(value, child)
-            if result:
+            if result is not None:
                 return result
 
         return None
@@ -75,15 +75,27 @@ class Tree:
         :param parent: The parent node value to which the new node should be added as a child.
         :return: a pointer to the node object
         """
+        parent_node = self.get_node(parent)
+        if parent_node is None:
+            raise ValueError(f"Parent node '{parent}' not found.")
+
+        new_node = Node(value)
+        parent_node.add_child(new_node)
+        return new_node
 
 
-        raise NotImplementedError()
 
-    def height(self):
+    def height(self,node=None):
         """
         Returns the height of the tree
         """
-        raise NotImplementedError()
+        if node is None:
+            node = self.root
+
+        if not node.children:
+            return 1
+
+        return 1 + max(self.height(child) for child in node.children)
 
 
 class BinaryTree(Tree):
@@ -103,10 +115,34 @@ class BinaryTree(Tree):
 
         Returns a pointer to the node
         """
-        raise NotImplementedError()
+        parent_node = self.get_node(parent)
+        if parent_node is None:
+            raise ValueError(f"Parent node '{parent}' not found.")
+
+        parent_node = self.get_node(parent)
+        if parent_node is None:
+            raise ValueError(f"Parent node '{parent}' not found.")
+
+        if len(parent_node.children) > 0:
+            parent_node.children[0] = Node(value)
+        else:
+            parent_node.add_child(Node(value))
+
+        return parent_node.children[0]
 
     def set_right_node(self, value, parent):
-        raise NotImplementedError()
+        parent_node = self.get_node(parent)
+        if parent_node is None:
+            raise ValueError(f"Parent node '{parent}' not found.")
+
+        if len(parent_node.children) > 1:
+            parent_node.children[1] = Node(value)
+        elif len(parent_node.children) == 1:
+            parent_node.add_child(Node(value))
+        else:
+            parent_node.add_child(Node(value))
+
+        return parent_node.children[-1]
 
 
 if __name__ == "__main__":

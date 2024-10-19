@@ -3,11 +3,15 @@ class SimpleQueue:
     A basic queue data structure.
     """
 
-    def __init__(self):
+    def __init__(self,queue=None,):
         """
         Initialize an empty queue.
         """
-        raise NotImplementedError()
+        self.item = None
+        if queue is None:
+            queue = []
+        self.queue = queue
+        #raise NotImplementedError()
 
     def is_empty(self):
         """
@@ -15,7 +19,11 @@ class SimpleQueue:
 
         :return: bool: True if the queue is empty, False otherwise.
         """
-        raise NotImplementedError()
+        if len(self.queue) == 0 :
+            return True
+        else:
+            return False
+        #raise NotImplementedError()
 
     def enqueue(self, item):
         """
@@ -23,7 +31,9 @@ class SimpleQueue:
 
         :param item: The item to be added to the queue.
         """
-        raise NotImplementedError()
+        self.queue.append(item)
+
+        #raise NotImplementedError()
 
     def dequeue(self):
         """
@@ -32,7 +42,12 @@ class SimpleQueue:
         :return: The item at the front of the queue.
         :raises RuntimeError: If the queue is empty.
         """
-        raise NotImplementedError()
+        if len(self.queue) == 0:
+            raise RuntimeError("the queue is empty")
+
+        return self.queue.pop(0)
+
+        #raise NotImplementedError()
 
     def peek(self):
         """
@@ -41,7 +56,10 @@ class SimpleQueue:
         :return: The item at the front of the queue.
         :raises RuntimeError: If the queue is empty.
         """
-        raise NotImplementedError()
+        if len(self.queue) == 0:
+            raise RuntimeError("the queue is empty")
+        return self.queue[0]
+        #raise NotImplementedError()
 
     def size(self):
         """
@@ -49,7 +67,8 @@ class SimpleQueue:
 
         :return: int: The number of items in the queue.
         """
-        raise NotImplementedError()
+        return len(self.queue)
+        #raise NotImplementedError()
 
 
 if __name__ == '__main__':
@@ -57,7 +76,6 @@ if __name__ == '__main__':
     q.enqueue(1)
     q.enqueue(2)
     q.enqueue(3)
-
     print("Queue size:", q.size())
     print("Front item:", q.peek())
 

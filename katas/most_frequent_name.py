@@ -5,6 +5,34 @@ def most_frequent_name(file_path):
 
     You can assume file_path exists in the file system.
     """
+    dict_names = {}
+    with open(file_path,"r") as file:
+        list_name = file.read().splitlines()
+        for name in list_name:
+            if name in  dict_names :
+                dict_names[name] += 1
+            else:
+                dict_names[name] = 1
+    most_appears_name = max(dict_names,key=dict_names.get)
+    return most_appears_name
+
+
+
+
+if __name__ == '__main__':
+    print(most_frequent_name('files/names.txt'))
+
+
+
+
+
+
+
+
+
+
+
+"""
     with open(file_path,mode= 'r') as file:
         name_list = file.read().splitlines()
         name_count = {}
@@ -16,7 +44,4 @@ def most_frequent_name(file_path):
         max_high = max(name_count,key=name_count.get)
         return max_high
 
-
-
-if __name__ == '__main__':
-    print(most_frequent_name('files/names.txt'))
+"""

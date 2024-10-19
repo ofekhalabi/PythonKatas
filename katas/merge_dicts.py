@@ -2,6 +2,8 @@ def merge_dicts(dict1, dict2):
     """
     This functions merges the content of dict2 into dict1, and returns dict1
     """
+    #return {**dict1, **dict2}
+    return dict1.update(dict2)
 
 
 conf1 = {'a': 1, 'b': 99}

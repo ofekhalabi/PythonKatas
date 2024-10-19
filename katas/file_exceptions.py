@@ -1,4 +1,3 @@
-from katas.total_expense import expenses
 
 
 def file_exceptions(file_path, op='r'):
@@ -14,14 +13,13 @@ def file_exceptions(file_path, op='r'):
             content_modified = content.replace(' ', '_')
             return content_modified
     except FileNotFoundError:
-        return print ("FileNotFoundError: the file is not exist")
+        return  "FileNotFoundError: the file is not exist"
     except IsADirectoryError:
-        return print ("IsADirectoryError: the file trying open is a directory")
+        return  "IsADirectoryError: the file trying open is a directory"
     except FileExistsError:
-        return print ("FileExistsError: already exists")
+        return  "FileExistsError: already exists"
     except PermissionError:
-        return print ("PermissionError: you dont have permission")
-
+        return  "PermissionError: you dont have permission"
 if __name__ == '__main__':
     print(file_exceptions('files/nonexistent_file.txt'))
     print(file_exceptions('files/somefile'))

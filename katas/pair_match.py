@@ -1,3 +1,6 @@
+from lib2to3.fixes.fix_tuple_params import tuple_name
+
+
 def pair_match(men, women):
     """
     This function receives two dictionaries in the form:
@@ -9,6 +12,14 @@ def pair_match(men, women):
     The function returns a pair of names (tuple) of men and women names,
     where their absolute age differences is the minimal.
     """
+    min_diff = 123
+    for m,age_m in  men.items() :
+        for w,age_w in women.items() :
+            sub_age = abs(abs(age_m) - abs(age_w))
+            if sub_age < min_diff :
+                min_diff = sub_age
+                names=m,w
+    return names
 
 
 

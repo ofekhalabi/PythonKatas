@@ -35,7 +35,7 @@ class Node:
         self.children = []
 
     def add_child(self, child):
-        raise NotImplementedError()
+        self.children.append(child)
 
 
 class Tree:
@@ -49,11 +49,23 @@ class Tree:
         """
         self.root = Node(root_node_value)
 
-    def get_node(self, value):
+    def get_node(self, value, current_node=None):
         """
-        Returns a pointer to the Node object with the corresponding value
+        Recursively search the tree for a node with the given value.
         """
-        raise NotImplementedError()
+        if current_node is None:
+            current_node = self.root
+
+        if current_node.value == value:
+            return current_node
+
+        for child in current_node.children:
+            result = self.get_node(value, child)
+            if result:
+                return result
+
+        return None
+
 
     def add_node(self, value, parent):
         """
@@ -61,9 +73,10 @@ class Tree:
 
         :param value: The node value.
         :param parent: The parent node value to which the new node should be added as a child.
-
         :return: a pointer to the node object
         """
+
+
         raise NotImplementedError()
 
     def height(self):

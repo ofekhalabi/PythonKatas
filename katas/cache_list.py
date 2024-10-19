@@ -27,11 +27,9 @@ class CacheList(list):
 
 
     def append(self, element):
-        if  (len(c_list)) == 3 :
-            super().pop(0)
-            super().append(element)
-        else:
-            super().append(element)
+        if  (len(self)) >= self.cache_capacity :
+            self.pop(0)
+        super().append(element)
 
     def cache_capacity(self):
         """
